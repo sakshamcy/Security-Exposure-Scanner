@@ -20,17 +20,34 @@ The application performs reconnaissance and security checks against domains and 
 
 ## 🏗 Architecture
 
+
 Security-Exposure-Scanner/
 │
 ├── app.py                # Main Flask application
 ├── config.py             # Configuration settings
-├── models/               # Database logic
-├── modules/              # Security scanning modules
-├── templates/            # HTML templates
-├── static/               # CSS styling
-├── scans/                # Scan results storage
 ├── Dockerfile            # Container configuration
-└── requirements.txt      # Dependencies
+├── requirements.txt      # Dependencies
+│
+├── models/               # Database layer
+│   └── database.py
+│
+├── modules/              # Security scanning modules
+│   ├── breach_checker.py
+│   ├── email_scanner.py
+│   ├── port_scanner.py
+│   ├── risk_engine.py
+│   ├── ssl_checker.py
+│   └── subdomain_scanner.py
+│
+├── templates/            # HTML templates
+│   ├── dashboard.html
+│   └── index.html
+│
+├── static/               # CSS styling
+│   └── style.css
+│
+└── scans/                # Scan results storage
+
 
 ---
 
