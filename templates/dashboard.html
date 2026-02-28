@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Security Exposure Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Security Exposure Dashboard</h1>
+        <p>Results for <strong>{{ domain }}</strong></p>
+
+        <!-- Risk Level -->
+        <div class="risk-level {% if risk == 'High' %}high{% elif risk == 'Medium' %}medium{% else %}low{% endif %}">
+            Risk Level: {{ risk }}
+        </div>
+
+        <!-- Subdomains -->
+        <div class="dashboard-section">
+            <h3>Subdomains</h3>
+            {% if subdomains %}
+                <ul>
+                {% for sub in subdomains %}
+                    <li>{{ sub }}</li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <p>No subdomains found.</p>
+            {% endif %}
+        </div>
+
+        <!-- Open Ports -->
+        <div class="dashboard-section">
+            <h3>Open Ports</h3>
+            {% if ports %}
+                <ul>
+                {% for port in ports %}
+                    <li>Port {{ port }}</li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <p>No open ports found.</p>
+            {% endif %}
+        </div>
+
+        <!-- Email Exposure -->
+        <div class="dashboard-section">
+            <h3>Email Exposure</h3>
+            {% if emails.count > 0 %}
+                <p>Total Emails Found: {{ emails.count }}</p>
+                <ul>
+                {% for email in emails.emails %}
+                    <li>{{ email }}</li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <p>No emails found.</p>
+            {% endif %}
+        </div>
+
+        <!-- SSL Status -->
+        <div class="dashboard-section">
+            <h3>SSL Status</h3>
+            <p>{{ ssl }}</p>
+        </div>
+
+        <!-- Back Button -->
+        <a href="{{ url_for('index') }}" class="btn">Scan Another Domain</a>
+
+    </div>
+</body>
+</html>

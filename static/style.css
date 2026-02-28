@@ -1,0 +1,183 @@
+/* =========================
+   General Body & Background
+   ========================= */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =========================
+   Container
+   ========================= */
+.container {
+    width: 100%;
+    max-width: 700px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+}
+
+/* =========================
+   Card (Index Page)
+   ========================= */
+.card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.card h1 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* =========================
+   Input Group
+   ========================= */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.tooltip {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    font-size: 12px;
+    color: #888;
+}
+
+/* =========================
+   Scan Options (Checkboxes)
+   ========================= */
+.scan-options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* =========================
+   Buttons
+   ========================= */
+.btn {
+    display: inline-block;
+    max-width: 100%;
+    width: 100%;
+    padding: 12px 25px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #ff4b2b, #ff416c);
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+    box-sizing: border-box;
+    word-wrap: break-word; /* Wrap text if needed */
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    background-color: #555; /* Fallback hover color */
+}
+
+/* =========================
+   Risk Level (Dashboard)
+   ========================= */
+.risk-level {
+    padding: 15px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 18px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.risk-level.low {
+    background-color: #4CAF50; /* Green */
+}
+
+.risk-level.medium {
+    background-color: #FFEB3B; /* Yellow */
+    color: #000;
+}
+
+.risk-level.high {
+    background-color: #f44336; /* Red */
+}
+
+/* =========================
+   Dashboard Sections
+   ========================= */
+.dashboard-section {
+    margin-bottom: 20px;
+}
+
+.dashboard-section h3 {
+    margin-bottom: 10px;
+}
+
+.dashboard-section ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.dashboard-section p {
+    font-style: italic;
+}
+
+/* =========================
+   Recent Scans (Optional)
+   ========================= */
+.recent-scans {
+    text-align: left;
+    margin-top: 25px;
+}
+
+.recent-scans h3 {
+    color: #333;
+}
+
+.recent-scans ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.recent-scans li {
+    padding: 5px 0;
+    color: #555;
+}

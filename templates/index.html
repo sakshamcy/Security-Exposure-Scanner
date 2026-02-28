@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Security Exposure Scanner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function showLoading() {
+            document.getElementById('scan-btn').innerText = 'Scanning...';
+            document.getElementById('scan-btn').disabled = true;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Security Exposure Scanner</h1>
+        <form method="POST" onsubmit="showLoading()">
+            <div class="input-group">
+                <input type="text" name="domain" >
+                <span class="tooltip"   </span>
+            </div>
+
+            <div class="scan-options">
+                <label><input type="checkbox" name="scan_subdomains" checked> Subdomains</label>
+                <label><input type="checkbox" name="scan_ports" checked> Ports</label>
+                <label><input type="checkbox" name="scan_ssl" checked> SSL</label>
+                <label><input type="checkbox" name="email_scanner" checked> Emails</label>
+            </div>
+
+            <button type="submit" id="scan-btn" class="btn">Start Scan</button>
+        </form>
+    </div>
+</body>
+</html>
